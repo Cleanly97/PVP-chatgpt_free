@@ -1,43 +1,98 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-    <meta charset="UTF-8">
-    <title>PVP - Produkter</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Produkter - PVP</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <nav>
-        <h1>PVP</h1>
-        <ul>
-            <li><a href="index.html">Hem</a></li>
-            <li><a href="products.html">Produkter</a></li>
-        </ul>
-    </nav>
+<nav>
+<h1>PVP</h1>
+<ul>
+<li><a href="index.html">Hem</a></li>
+<li><a href="products.html">Produkter</a></li>
+<li><a href="about.html">Om oss</a></li>
+</ul>
+</nav>
 </header>
 
 <main>
-    <h2>Våra plagg</h2>
 
-    <select id="filter">
-        <option value="all">Alla</option>
-        <option value="tshirt">T-shirt</option>
-        <option value="hoodie">Hoodie</option>
-        <option value="byxor">Byxor</option>
-        <option value="keps">Keps</option>
-        <option value="skor">Skor</option>
-    </select>
+<h2>Produkter</h2>
 
-    <div class="products">
+<div class="filters">
+<select id="categoryFilter">
+<option value="all">Kategori</option>
+<option value="tshirt">T-shirt</option>
+<option value="hoodie">Hoodie</option>
+<option value="byxor">Byxor</option>
+<option value="keps">Keps</option>
+<option value="skor">Skor</option>
+</select>
 
-        <div class="product" data-category="tshirt">T-shirt</div>
-        <div class="product" data-category="hoodie">Hoodie</div>
-        <div class="product" data-category="byxor">Byxor</div>
-        <div class="product" data-category="keps">Keps</div>
-        <div class="product" data-category="skor">Skor</div>
+<select id="sizeFilter">
+<option value="all">Storlek</option>
+<option value="s">S</option>
+<option value="m">M</option>
+<option value="l">L</option>
+</select>
 
-    </div>
+<select id="colorFilter">
+<option value="all">Färg</option>
+<option value="svart">Svart</option>
+<option value="vit">Vit</option>
+</select>
+
+<select id="materialFilter">
+<option value="all">Material</option>
+<option value="bomull">Bomull</option>
+<option value="polyester">Polyester</option>
+</select>
+</div>
+
+<div class="products">
+
+<div class="product" data-category="tshirt" data-size="m" data-color="svart" data-material="bomull" data-name="Svart T-shirt" data-price="199">
+<p>Svart T-shirt - 199 kr</p>
+<button onclick="addToCart(this)">Lägg i varukorg</button>
+</div>
+
+<div class="product" data-category="hoodie" data-size="l" data-color="vit" data-material="bomull" data-name="Vit Hoodie" data-price="499">
+<p>Vit Hoodie - 499 kr</p>
+<button onclick="addToCart(this)">Lägg i varukorg</button>
+</div>
+
+<div class="product" data-category="byxor" data-size="m" data-color="svart" data-material="polyester" data-name="Byxor" data-price="399">
+<p>Byxor - 399 kr</p>
+<button onclick="addToCart(this)">Lägg i varukorg</button>
+</div>
+
+</div>
+
+<h2>🛒 Varukorg (<span id="cartCount">0</span>)</h2>
+
+<div id="cartItems"></div>
+
+<p>Total (inkl frakt): <span id="total">0</span> kr</p>
+
+<h3>Leverans</h3>
+<select>
+<option>PostNord</option>
+<option>EarlyBird</option>
+<option>DHL</option>
+</select>
+
+<h3>Betalning</h3>
+<select>
+<option>Klarna</option>
+<option>Swish</option>
+<option>Bankkort</option>
+</select>
+
+<p>Fri frakt över 599 kr</p>
+
 </main>
 
 <script src="script.js"></script>

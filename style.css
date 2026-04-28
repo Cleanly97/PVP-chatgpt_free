@@ -1,36 +1,70 @@
 body {
-    font-family: Arial;
-    margin: 0;
+font-family: Arial, sans-serif;
+margin: 0;
+background: #f5f5f5;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    background: black;
-    color: white;
-    padding: 15px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+background: #111;
+color: white;
+padding: 15px;
 }
 
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+list-style: none;
+display: flex;
+gap: 20px;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
+color: white;
+text-decoration: none;
+}
+
+main {
+padding: 20px;
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    padding: 20px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 20px;
 }
 
 .product {
-    background: #eee;
-    padding: 20px;
-    text-align: center;
+background: white;
+padding: 15px;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+text-align: center;
+}
+
+button {
+padding: 10px;
+background: black;
+color: white;
+border: none;
+cursor: pointer;
+margin-top: 10px;
+}
+
+button:hover {
+background: #333;
+}
+
+.filters {
+display: flex;
+gap: 10px;
+margin-bottom: 20px;
+flex-wrap: wrap;
+}
+
+.card {
+background: white;
+padding: 20px;
+margin-bottom: 10px;
+border-radius: 10px;
 }
