@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <title>PVP - Produkter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <h1>PVP</h1>
+        <ul>
+            <li><a href="index.html">Hem</a></li>
+            <li><a href="products.html">Produkter</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Våra plagg</h2>
+
+    <select id="filter">
+        <option value="all">Alla</option>
+        <option value="tshirt">T-shirt</option>
+        <option value="hoodie">Hoodie</option>
+        <option value="byxor">Byxor</option>
+        <option value="keps">Keps</option>
+        <option value="skor">Skor</option>
+    </select>
+
+    <div class="products">
+
+        <div class="product" data-category="tshirt">T-shirt</div>
+        <div class="product" data-category="hoodie">Hoodie</div>
+        <div class="product" data-category="byxor">Byxor</div>
+        <div class="product" data-category="keps">Keps</div>
+        <div class="product" data-category="skor">Skor</div>
+
+    </div>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

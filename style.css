@@ -1,0 +1,36 @@
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: black;
+    color: white;
+    padding: 15px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.product {
+    background: #eee;
+    padding: 20px;
+    text-align: center;
+}
