@@ -1,5 +1,6 @@
-let cart = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+/* FILTER */
 const filters = {
 category: document.getElementById("categoryFilter"),
 size: document.getElementById("sizeFilter"),
@@ -23,14 +24,11 @@ const matchSize = !filters.size || filters.size.value === "all" || product.datas
 const matchColor = !filters.color || filters.color.value === "all" || product.dataset.color === filters.color.value;
 const matchMaterial = !filters.material || filters.material.value === "all" || product.dataset.material === filters.material.value;
 
-if (matchCategory && matchSize && matchColor && matchMaterial) {
-product.style.display = "block";
-} else {
-product.style.display = "none";
-}
+product.style.display = (matchCategory && matchSize && matchColor && matchMaterial) ? "block" : "none";
 });
 }
 
+/* CART */
 function addToCart(button) {
 const product = button.parentElement;
 
@@ -40,12 +38,18 @@ price: Number(product.dataset.price)
 };
 
 cart.push(item);
+saveCart();
 updateCart();
 }
 
 function removeFromCart(index) {
 cart.splice(index, 1);
+saveCart();
 updateCart();
+}
+
+function saveCart() {
+localStorage.setItem("cart", JSON.stringify(cart));
 }
 
 function updateCart() {
@@ -63,9 +67,9 @@ cart.forEach((item, index) => {
 sum += item.price;
 
 cartItems.innerHTML += `
-<div>
+<div class="cart-item">
 ${item.name} - ${item.price} kr
-<button onclick="removeFromCart(${index})">Ta bort</button>
+<button onclick="removeFromCart(${index})">X</button>
 </div>
 `;
 });
@@ -75,3 +79,11 @@ let shipping = sum >= 599 ? 0 : 59;
 total.textContent = sum + shipping;
 cartCount.textContent = cart.length;
 }
+
+/* DRAWER */
+function toggleCart() {
+document.getElementById("cartDrawer").classList.toggle("open");
+}
+
+/* INIT */
+updateCart();

@@ -7,16 +7,19 @@
 </head>
 <body>
 
-<header>
 <nav>
 <h1>PVP</h1>
 <ul>
 <li><a href="index.html">Hem</a></li>
 <li><a href="products.html">Produkter</a></li>
 <li><a href="about.html">Om oss</a></li>
+
+<li class="cart-icon" onclick="toggleCart()">
+🛒
+<span class="cart-count" id="cartCount">0</span>
+</li>
 </ul>
 </nav>
-</header>
 
 <main>
 <h2>Om oss</h2>
@@ -25,11 +28,35 @@
 <p><strong>"din självklara mjuka-varor butik"</strong></p>
 
 <p>
-Vi säljer ett litet och noggrant utvalt sortiment av kläder 
+Vi säljer ett litet, noggrant utvalt sortiment av kläder
 med fokus på kvalitet, komfort och stil.
 </p>
 
 </main>
 
+<!-- CART -->
+<div id="cartDrawer" class="cart-drawer">
+<h2>Varukorg</h2>
+<div id="cartItems"></div>
+<p>Total: <span id="total">0</span> kr</p>
+
+<h3>Leverans</h3>
+<select>
+<option>PostNord</option>
+<option>EarlyBird</option>
+<option>DHL</option>
+</select>
+
+<h3>Betalning</h3>
+<select>
+<option>Klarna</option>
+<option>Swish</option>
+<option>Bankkort</option>
+</select>
+
+<p>Fri frakt över 599 kr</p>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

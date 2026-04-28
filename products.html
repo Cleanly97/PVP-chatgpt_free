@@ -7,16 +7,19 @@
 </head>
 <body>
 
-<header>
 <nav>
 <h1>PVP</h1>
 <ul>
 <li><a href="index.html">Hem</a></li>
 <li><a href="products.html">Produkter</a></li>
 <li><a href="about.html">Om oss</a></li>
+
+<li class="cart-icon" onclick="toggleCart()">
+🛒
+<span class="cart-count" id="cartCount">0</span>
+</li>
 </ul>
 </nav>
-</header>
 
 <main>
 
@@ -71,11 +74,13 @@
 
 </div>
 
-<h2>🛒 Varukorg (<span id="cartCount">0</span>)</h2>
+</main>
 
+<!-- CART -->
+<div id="cartDrawer" class="cart-drawer">
+<h2>Varukorg</h2>
 <div id="cartItems"></div>
-
-<p>Total (inkl frakt): <span id="total">0</span> kr</p>
+<p>Total: <span id="total">0</span> kr</p>
 
 <h3>Leverans</h3>
 <select>
@@ -92,8 +97,7 @@
 </select>
 
 <p>Fri frakt över 599 kr</p>
-
-</main>
+</div>
 
 <script src="script.js"></script>
 </body>
